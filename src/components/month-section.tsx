@@ -44,7 +44,7 @@ export function MonthSection({ month, photos, index }: MonthSectionProps) {
         </p>
       </div>
 
-      <div className="relative mx-auto max-w-2xl overflow-hidden rounded-xl bg-white p-4 shadow-xl">
+      <div className="relative mx-auto max-w-2xl overflow-hidden rounded-xl bg-white/80 p-4 shadow-xl backdrop-blur-sm">
         <div className="relative aspect-[4/3]">
           <AnimatePresence mode="wait">
             <motion.div

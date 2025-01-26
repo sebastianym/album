@@ -1,6 +1,7 @@
 import { MonthSection } from "@/components/month-section";
 import { AddPhotoButton } from "@/components/add-photo-button";
 import { Toaster } from "@/components/ui/toaster";
+import { Background } from "@/components/backgorund";
 import prisma from "@/lib/prisma";
 
 interface Photo {
@@ -46,9 +47,9 @@ export default async function PhotoAlbum() {
         src="/audio/primorosa.mp3"
         autoPlay
         loop
-        className="hidden" // Ocultar controles para reproducción automática
+        className="hidden"
       />
-
+      <Background />
       <div className="container mx-auto px-4 py-16">
         <header className="mb-16 text-center">
           <h1 className="mb-4 font-serif text-5xl font-light tracking-wide text-gray-800 md:text-7xl">
