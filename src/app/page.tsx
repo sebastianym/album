@@ -3,12 +3,17 @@ import { AddPhotoButton } from "@/components/add-photo-button";
 import { Toaster } from "@/components/ui/toaster";
 import { Background } from "@/components/backgorund";
 import prisma from "@/lib/prisma";
+import dynamic from "next/dynamic";
 
 interface Photo {
   id: number;
   src: string;
   date: string;
 }
+
+const AudioAutoPlayer = dynamic(() => import("@/components/audioPlayer"), {
+  ssr: false,
+});
 
 export default async function PhotoAlbum() {
   // Obtener fotos desde la base de datos
@@ -43,12 +48,8 @@ export default async function PhotoAlbum() {
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-pink-100 to-white">
-      <audio
-        src="/audio/primorosa.mp3"
-        autoPlay
-        loop
-        className="hidden"
-      />
+      <audio id="myAudio" src="/audio/primorosa.mp3" loop className="hidden" />
+      <AudioAutoPlayer />
       <Background />
       <div className="container mx-auto px-4 py-16">
         <header className="mb-16 text-center">
