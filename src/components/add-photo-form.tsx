@@ -160,7 +160,6 @@ export function AddPhotoForm({ onSuccess }: AddPhotoFormProps) {
                     disabled={(date) =>
                       date > new Date() || date < new Date("2022-01-01")
                     }
-                    initialFocus
                   />
                 </PopoverContent>
               </Popover>
